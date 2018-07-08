@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  a(href="/memo/new") New Memo
+  br
+  table.table-bordered
+    tr
+      th Title
+      th Text
+      th Action
+    each memo in memos
+      tr
+        td=memo.title
+        td=memo.text
+        td
+          a(href="#") Edit
+          &nbsp;
+          a(href="#") Delete
