@@ -6,11 +6,13 @@ var Memo = require('../models/memo')
 router.get('/', async function(req, res) {
   // TODO: get memos by userId
   var memos = await Memo.find({}).exec();
+  
   console.log(memos);
   res.render('memo/index', {
     memos: memos,
   });
 });
+
 
 /* GET new memo screen. */
 router.get('/new', function(req, res) {
@@ -19,12 +21,15 @@ router.get('/new', function(req, res) {
 
 /* POST new memo. */
 router.post('/new', async function(req, res) {
-  console.log(req.body);
   await new Memo({
     title: req.body.title,
     text: req.body.text,
   }).save();
   res.redirect('/memo');
 });
+
+router.post('/edit',async function(req,res){
+
+})
 
 module.exports = router;

@@ -6,7 +6,8 @@ block content
     br
     a(href="/register") Register
   if (user)
-    p You are currently logged in as #{user.username}
+    p You are currently logged in as userid: #{user.id}
     a(href="/logout") Logout
-  br
-  a(href="/memo") Memo
+    br
+    a(href="/memo") Memo
+  
