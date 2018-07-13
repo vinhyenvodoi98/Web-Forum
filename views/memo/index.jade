@@ -1,17 +1,23 @@
 extends ../layout
 
+
 block content
-  a(href="/memo/new") New Memo
-  br
-  table.table-bordered
-    tr
-      th Title
-      th Text
-      th Action
-    each memo in memos
-      tr
-        td=memo.title
-        td=memo.text
-        td
-          a(href="/memo/edit") Edit
-          a(href="/memo") Delete
+  if(user)
+    a(href="/memo/new") New Memo
+    br
+    table.table-striped
+     tr
+        th UserID
+        th Title
+        th Text
+        th Action
+      each memo in memos
+       tr
+          td=memo.userId
+          td=memo.title
+          td=memo.text
+          td
+            a(href='/memo/edit/'+memo._id) Edit
+            a(href='/memo') Delete
+  if(! user)
+    p please login          
