@@ -3,9 +3,11 @@ extends ../layout
 
 block content
   if(user)
+  p login as userId: #{user.id}
+    br
     a(href="/memo/new") New Memo
     br
-    table.table-striped
+    table.table-striped.table.table-bordered
      tr
         th UserID
         th Title
@@ -18,6 +20,7 @@ block content
           td=memo.text
           td
             a(href='/memo/edit/'+memo._id) Edit
-            a(href='/memo') Delete
+            &nbsp;
+            a(href='/memo/'+memo._id) Delete
   if(! user)
     p please login          

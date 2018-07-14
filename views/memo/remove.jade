@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  form(role='form', method="post", style='max-width: 300px;')
+    p Do you want to remove
+    button.btn.btn-delete(type='submit') Yes
+    
+    a(href='/memo')
+        button.btn.btn-primary(type="button") Cancel

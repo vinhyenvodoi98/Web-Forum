@@ -2,8 +2,10 @@ extends ../layout
 
 block content
   form(role='form', method="post", style='max-width: 300px;')
+    p Title
     .form-group
       input(type='text', name='title')
+    p Text
     .form-group
       textarea.form-control(name='text')
     button(type='submit', value='Submit') submit
