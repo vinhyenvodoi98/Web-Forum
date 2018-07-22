@@ -1,26 +1,39 @@
 extends ../layout
 
-
 block content
   if(user)
-  p login as userId: #{user.id}
-    br
-    a(href="/memo/new") New Memo
-    br
+  p.text-right login as userId: #{user.name}
+  a(href="/memo/newpost") New Memo
+  br
+  each post in posts
+    div
     table.table-striped.table.table-bordered
-     tr
-        th UserID
+      tr
+        th User
         th Title
         th Text
         th Action
+      tr
+        td=post.userName
+        td=post.title
+        td=post.text
+        td
+          if (user.id == post.userId)
+                a(href='/memo/postedit/'+post._id) Edit
+                &nbsp;
+                a(href='/memo/post/'+post._id) Delete
       each memo in memos
-       tr
-          td=memo.userId
-          td=memo.title
-          td=memo.text
-          td
-            a(href='/memo/edit/'+memo._id) Edit
-            &nbsp;
-            a(href='/memo/'+memo._id) Delete
+        tr
+          if( memo.postId==post._id)
+            td=memo.userName
+            td=memo.title
+            td=memo.text
+            td
+              if (user.id == memo.userId)
+                a(href='/memo/edit/'+memo._id) Edit
+                &nbsp;
+                a(href='/memo/'+memo._id) Delete
+    p.text-right
+      a.text-right(href='memo/comment/'+post._id) Comment  
   if(! user)
     p please login          

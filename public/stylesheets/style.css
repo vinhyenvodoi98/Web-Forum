@@ -3,6 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+p.alignRight {
+  text-align: right;
+}
+
 a {
   color: #00B7FF;
 }
