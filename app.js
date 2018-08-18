@@ -45,7 +45,7 @@ passport.deserializeUser(Account.deserializeUser());
   
  
 var mongodbUri = 'mongodb://vinhyenvodoi98:bishay612@ds123500.mlab.com:23500/passport';
-mongoose.createConnection(mongodbUri);
+mongoose.connect(mongodbUri);
 
 
 // catch 404 and forward to error handler
