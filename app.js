@@ -44,7 +44,8 @@ passport.deserializeUser(Account.deserializeUser());
 // mongoose
   
  
-var mongodbUri = 'mongodb://vinhyenvodoi98:bishay612@ds123500.mlab.com:23500/passport';
+var mongodbUri = 'mongodb://passport:passport1@ds155825.mlab.com:55825/passport'; //dung data online
+// mongodbUri = 'mongodb://localhost:27017/passport_local_mongoose_express4'
 mongoose.connect(mongodbUri);
 
 
