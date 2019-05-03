@@ -23,7 +23,7 @@ html
                 a(href='/articles/add') Add Article
           ul.nav.navbar-nav.navbar-right
             if user
-              li 
+              li
                 a(href='/logout') Logout
             else
               li
@@ -35,8 +35,7 @@ html
         each error, i in errors
           div(class="alert alert-danger") #{error.msg}
       block content
-      br
-      hr
-      footer
+      footer(style='right: 0; bottom: 0;left: 0; padding: 1rem; text-align: center;')
+        hr
         p Copyright &copy; 2017
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
