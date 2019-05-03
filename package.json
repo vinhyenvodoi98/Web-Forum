@@ -31,7 +31,9 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinhyenvodoi98/passport.git"
