@@ -1,9 +1,12 @@
 extends layout
 
+prepend stylesheets
+  link(rel='stylesheet',href='/stylesheets/home.css')
+
 block content
-  .container
+  .login
     h1 Login Page
-    p.lead Say something worthwhile here.
+    p.lead
     br
     form(role='form', action="/login",method="post", style='max-width: 300px;')
       .form-group
@@ -13,4 +16,4 @@ block content
       button.btn.btn-default(type='submit') Submit
 
       a(href='/')
-        button.btn.btn-primary(type="button") Cancel
+        button.btn.btn-primary(type="button" style="margin-left: 30px;") Cancel

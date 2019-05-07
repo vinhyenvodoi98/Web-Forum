@@ -1,9 +1,14 @@
 extends ../layout
 
-block content
-  form(role='form', method="post", style='max-width: 300px;')
-    p Do you want to remove
-    button.btn.btn-delete(type='submit') Yes
+prepend stylesheets
+  link(rel='stylesheet',href='/stylesheets/home.css')
 
-    a(href='/memo')
-        button.btn.btn-primary(type="button") Cancel
+block content
+  .remove
+    form(role='form', method="post", style='max-width: 300px;')
+      h3
+        strong Do you want to remove
+      button.btn.btn-delete(type='submit') Yes
+
+      a(href='/memo')
+          button.btn.btn-primary(type="button", style="margin-left: 30px;") Cancel

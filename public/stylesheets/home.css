@@ -1,0 +1,41 @@
+.homepage{
+    display: flex;
+    flex-direction: row;
+}
+
+.image{
+    height: 80vh;
+    width: 90%;
+    background-image: url(https://steemitimages.com/p/2gsjgna1uruvUuS7ndh9YqVwYGPLVszbFLwwpAYXYSW47zVTEpWjD187AJvXmuYoa1Ym51J7C48t7c1Ng73ENXeJTWMG5BtnvzxMEDJ6amgZcoR49k?format=match&mode=fit&width=640);
+}
+
+.image-01{
+    height: 70vh;
+    width: 100%;
+    background-image: url(https://steemitimages.com/p/2gsjgna1uruvUuS7ndh9YqVwYGPLVszbFLwwpAYXYSW47zVTEpWjD187AJvXmuYoa1Ym51J7C48t7c1Ng73ENXeJTWMG5BtnvzxMEDJ6amgZcoR49k?format=match&mode=fit&width=640);
+}
+
+.login{
+    text-align: center;
+    margin: auto;
+    width: 27%;
+}
+
+.homepagelogin{
+    text-align: center;
+}
+
+form{
+    max-width: 100%;
+}
+
+.space_01{
+    height: 20%;
+}
+
+.remove{
+    text-align: center;
+    margin: auto;
+    width: 26%;
+
+}

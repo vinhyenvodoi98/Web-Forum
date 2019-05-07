@@ -1,9 +1,12 @@
 extends layout
 
+prepend stylesheets
+  link(rel='stylesheet',href='/stylesheets/home.css')
+
 block content
-  .container
-    h1 Register Page
-    p.lead Say something worthwhile here.
+  .login
+    h1 Register Here
+    p.lead
     br
     form(role='form', action="/register",method="post", style='max-width: 300px;')
       .form-group
@@ -15,4 +18,4 @@ block content
       button.btn.btn-default(type='submit') Submit
       &nbsp;
       a(href='/')
-        button.btn.btn-primary(type="button") Cancel
+        button.btn.btn-primary(type="button", style="margin-left: 30px;") Cancel

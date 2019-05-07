@@ -1,0 +1,30 @@
+extends layout
+
+prepend stylesheets
+  link(rel='stylesheet',href='/stylesheets/home.css')
+
+block content
+
+  if (!user)
+    .homepage
+      .image
+      .homepagelogin
+        .space_01
+        .space_02
+          h1 Login Here
+          p.lead Today make something better than yesterday.
+          br
+          form(role='form', action="/login",method="post")
+            .form-group
+                input.form-control(type='text', name="username", placeholder='Enter Username')
+            .form-group
+              input.form-control(type='password', name="password", placeholder='Password')
+            button.btn.btn-default(type='submit') Submit
+
+            a(href='/')
+              button.btn.btn-primary(type="button", style='margin-left: 30px;') Cancel
+  if (user)
+    p.text-right login as userId: 
+      strong #{user.name}
+    .homepage
+      .image-01

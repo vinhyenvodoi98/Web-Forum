@@ -17,7 +17,7 @@ router.get('/', async function(req, res) {
 /* POST new memo. */
 
 router.get('/newpost', function(req, res) {
-  res.render('memo/newpost');
+  res.render('memo/newpost',{user : req.user});
 });
 
 router.post('/newpost', async function(req,res){
@@ -31,7 +31,7 @@ router.post('/newpost', async function(req,res){
 });
 
 router.get('/postedit/:id',function(req, res){
-  res.render('memo/edit');
+  res.render('memo/edit',{user :req.user});
 });
 
 router.post('/postedit/:id',function(req, res){
@@ -47,7 +47,7 @@ router.post('/postedit/:id',function(req, res){
     if (err){
       console.log(err);
     }else{
-      res.redirect('/memo');
+      res.redirect('/memo',);
     }
   });
 });
@@ -81,7 +81,7 @@ router.post('/post/:id',function(req,res){
 
 /* GET new memo screen. */
 router.get('/comment/:id', function(req, res) {
-  res.render('memo/comment');
+  res.render('memo/comment',{user : req.user});
 });
 
 router.post('/comment/:id', async function(req, res) {
@@ -95,8 +95,30 @@ router.post('/comment/:id', async function(req, res) {
   res.redirect('/memo');
 });
 
+router.get('/editpost/:id',function(req,res){
+  res.render('memo/editpost',{ user : req.user})
+});
+
+router.post('/editpost/:id',function(req,res){
+  var memo = {};
+  memo.title=req.body.title;
+  memo.text=req.body.text;
+
+  var query={
+    _id :req.params.id,
+    userId:req.user.id,
+  }
+  Memo.update(query,memo, function(err){
+    if (err){
+      console.log(err);
+    }else{
+      res.redirect('/memo');
+    }
+  });
+});
+
 router.get('/edit/:id',function(req, res){
-  res.render('memo/edit');
+  res.render('memo/edit',{user : req.user});
 });
 
 router.post('/edit/:id',function(req, res){
@@ -118,7 +140,7 @@ router.post('/edit/:id',function(req, res){
 });
 
 router.get('/:id',function(req, res){
-  res.render('memo/remove');
+  res.render('memo/remove',{ user: req.user });
 })
 
 router.post('/:id',function(req,res){
