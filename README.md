@@ -1,5 +1,10 @@
 web su dug nodejs theo mo hinh web view controller
 
+Run in :
+
+I have deploy this project on Google Cloud Platform you can check it out in
+    http://35.187.245.230/
+
 Tai node va npm :
 
 - Cài đặt trên ubuntu
